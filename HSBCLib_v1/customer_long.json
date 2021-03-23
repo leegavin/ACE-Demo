@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "customer_ID": "12345",
+            "customer_name": {
+                "first": "Lee",
+                "last": "Gavin"
+            },
+            "tags": [
+                "UK",
+                "Premier"
+            ]
+        }
+    ],
+    "required": [
+        "customer_ID",
+        "customer_name",
+        "tags"
+    ],
+    "properties": {
+        "customer_ID": {
+            "$id": "#/properties/customer_ID",
+            "type": "string",
+            "title": "The customer_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "12345"
+            ]
+        },
+        "customer_name": {
+            "$id": "#/properties/customer_name",
+            "type": "object",
+            "title": "The customer_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "first": "Lee",
+                    "last": "Gavin"
+                }
+            ],
+            "required": [
+                "first",
+                "last"
+            ],
+            "properties": {
+                "first": {
+                    "$id": "#/properties/customer_name/properties/first",
+                    "type": "string",
+                    "title": "The first schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Lee"
+                    ]
+                },
+                "last": {
+                    "$id": "#/properties/customer_name/properties/last",
+                    "type": "string",
+                    "title": "The last schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Gavin"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "tags": {
+            "$id": "#/properties/tags",
+            "type": "array",
+            "title": "The tags schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "UK",
+                    "Premier"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/tags/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/tags/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "UK",
+                            "Premier"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

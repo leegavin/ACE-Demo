@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "customer_ID": "12345",
+            "customer_name": "Lee Gavin",
+            "customer_type": "Premier UK"
+        }
+    ],
+    "required": [
+        "customer_ID",
+        "customer_name",
+        "customer_type"
+    ],
+    "properties": {
+        "customer_ID": {
+            "$id": "#/properties/customer_ID",
+            "type": "string",
+            "title": "The customer_ID schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "12345"
+            ]
+        },
+        "customer_name": {
+            "$id": "#/properties/customer_name",
+            "type": "string",
+            "title": "The customer_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Lee Gavin"
+            ]
+        },
+        "customer_type": {
+            "$id": "#/properties/customer_type",
+            "type": "string",
+            "title": "The customer_type schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Premier UK"
+            ]
+        }
+    },
+    "additionalProperties": true
+}
